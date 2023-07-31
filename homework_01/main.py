@@ -45,12 +45,11 @@ def filter_numbers(numbers = [], filter_type = None):
     elif filter_type == PRIME:
         prime_num = []
         for number in numbers:
-            if number > 1:
-                for div in range(2, (number // 2) + 1):
-                    if number % div == 0:
-                        break
-                else:
-                    prime_num.append(number)
+            for div in range(2, (number // 2) + 1):
+                if number % div == 0:
+                    break
+            else:
+                prime_num.append(number)
         return prime_num
         
 filtered_numbers_odd = filter_numbers([1, 2, 3], ODD)
