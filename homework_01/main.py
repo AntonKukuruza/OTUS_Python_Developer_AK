@@ -45,11 +45,12 @@ def filter_numbers(numbers = [], filter_type = None):
     elif filter_type == PRIME:
         prime_num = []
         for number in numbers:
-            for div in range(2, (number // 2) + 1):
-                if number % div == 0:
-                    break
-            else:
-                prime_num.append(number)
+            if number > 1:
+                for div in range(2, (number // 2) + 1):
+                    if number % div == 0:
+                        break
+                else:
+                    prime_num.append(number)
         return prime_num
         
 filtered_numbers_odd = filter_numbers([1, 2, 3], ODD)
@@ -60,4 +61,3 @@ print(f"even: {filtered_numbers_even}")
 
 filtered_numbers_prime = filter_numbers([1, 3, 4, 5, 6, 7, 8], PRIME)
 print(f"prime: {filtered_numbers_prime}")
-
